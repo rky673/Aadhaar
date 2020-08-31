@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="{{url_for('static',filename='img/aa.png')}}">
+  <title>AADHAR</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{url_for('static',filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="{{url_for('static',filename='css/clean-blog.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">UIDAI</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/"><button>HOME</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about"><button>ABOUT</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logoutstaff"><button>LOGOUT</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({{url_for('static',filename='img/11.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>AADHAAR</h1>
+            <span class="subheading">Government of India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+
+<table class="table table-sm" style="width:50%;margin-left:25%">
+  <thead>
+    <tr class="table-danger">
+      <th scope="col">AADHAAAR NUMBER</th>
+      <th scope="col">NAME</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">PHONE NUMBER</th>
+      <th scope="col">ADDRESS</th>
+      <th scope="col">DATE OF REGISTRATION</th>
+      <th scope="col">DATE OF DEATH</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for data in datas%}
+    <tr>
+      <th scope="row" class="table-secondary">{{data.aadhar_no}}</th>
+      <td class="table-success">{{data.name}}</td>
+      <td class="table-success">{{data.email}}</td>
+      <td class="table-success">{{data.phone_no}}</td>
+      <td class="table-success">{{data.address}}</td>
+      <td class="table-success">{{data.dateofreg}}</td>
+        <td class="table-success">{{data.date}}</td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+
+<hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+<!--              <div class="custom">-->
+<!--	            <ul class="list-unstyled">-->
+              <li class="d-inline mr-5"><a href="https://www.facebook.com/AadhaarOfficial/" target="_blank" rel="noopener noreferrer"><img src="{{url_for('static',filename='img/Facebook1.png')}}" height="40" width="50" alt="Facebook" class="mb-5"></a></li>
+<li class="d-inline mr-5"><a href="https://twitter.com/UIDAI" target="_blank" rel="noopener noreferrer"><img src="{{url_for('static',filename='img/Twitter1.png')}}" height="40" width="50"alt="Twitter" class="mb-5"></a></li>
+<li class="d-inline mr-5"><a href="https://www.youtube.com/user/AadhaarUID" target="_blank" rel="noopener noreferrer"><img src="{{url_for('static',filename='img/Youtube1.png')}}"height="40" width="50" alt="Youtube" class="mb-5"></a></li>
+<li class="d-inline mr-5"><a href="https://www.instagram.com/aadhaar_official/?hl=en" target="_blank" rel="noopener noreferrer"><img src="{{url_for('static',filename='img/Instagram.png')}}"height="40" width="50" alt="Instagram" class="mb-5"></a></li>
+<li class="d-inline mr-5"><a href="https://www.linkedin.com/company/unique-identification-authority-of-india-uidai-" target="_blank" rel="noopener noreferrer"><img src="{{url_for('static',filename='img/Linkedin.png')}}" height="40" width="50"alt="LinkedIn" class="mb-5"></a></li>
+<!--              <li class="list-inline-item">-->
+<!--                <a href="https://twitter.com/UIDAI?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">-->
+<!--                  <span class="fa-stack fa-lg">-->
+<!--                    <i class="fa fa-circle fa-stack-2x"></i>-->
+<!--                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>-->
+<!--                  </span>-->
+<!--                </a>-->
+<!--              </li>-->
+            </ul>
+            <p class="copyright text-muted">Copyright © government of India</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+
+  </body>
+
+</html>
+

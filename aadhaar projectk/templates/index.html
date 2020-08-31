@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({{url_for('static',filename='img/11.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>AADHAAR</h1>
+            <span class="subheading">Government of India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+{%for t in tt%}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-100 col-md-100 mx-auto">
+        <div class="post-preview">
+          <a href="/post/{{t.sno}}">
+            <h2 class="post-title">
+              {{t.title}}
+            </h2>
+            <h3 class="post-subtitle">
+              {{t.description}}
+            </h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+          <hr>
+{%endfor%}
+        <!-- Pager -->
+      </div>
+    </div>
+  </div>
+
+    {% endblock %}
